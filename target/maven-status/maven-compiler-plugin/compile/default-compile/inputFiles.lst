@@ -1,6 +1,7 @@
 /Users/bonie/Documents/GitHub/springboot_restapi/src/main/java/com/boniewijaya2021/springboot/SpringbootApplication.java
 /Users/bonie/Documents/GitHub/springboot_restapi/src/main/java/com/boniewijaya2021/springboot/utility/AppUtil.java
 /Users/bonie/Documents/GitHub/springboot_restapi/src/main/java/com/boniewijaya2021/springboot/pojo/PenjualanPojo.java
+/Users/bonie/Documents/GitHub/springboot_restapi/src/main/java/com/boniewijaya2021/springboot/service/SalesPostService.java
 /Users/bonie/Documents/GitHub/springboot_restapi/src/main/java/com/boniewijaya2021/springboot/entity/TblSales.java
 /Users/bonie/Documents/GitHub/springboot_restapi/src/main/java/com/boniewijaya2021/springboot/repository/SalesRepository.java
 /Users/bonie/Documents/GitHub/springboot_restapi/src/main/java/com/boniewijaya2021/springboot/config/Cors.java

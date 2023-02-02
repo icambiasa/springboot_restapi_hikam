@@ -7,11 +7,12 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
+import java.util.UUID;
 
-public interface SalesRepository extends JpaRepository<TblSales, Integer> {
-    @Query(value = "SELECT id_penjualan, harga, nama_barang, sales_name\n" +
+public interface SalesRepository extends JpaRepository<TblSales, UUID> {
+    @Query(value = "SELECT cast (id_penjualan as varchar) id_penjualan, harga, nama_barang, sales_name\n" +
             "FROM sample.tbl_penjualan where id_penjualan =:idSales", nativeQuery = true)
-    PenjualanPojo getPenjualanByid(@Param("idSales") Integer idSales);
+    TblSales getPenjualanByid(@Param("idSales") UUID idSales);
 
 
 

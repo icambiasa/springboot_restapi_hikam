@@ -9,8 +9,10 @@ import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.UUID;
+
 @RestController
-@RequestMapping("/get")
+@RequestMapping("/sample")
 public class SampleGet {
 
     @Autowired
@@ -19,19 +21,19 @@ public class SampleGet {
     @Autowired
     private SalesPostService salesPostService;
 
-    @GetMapping("/dataPenjualan")
-    public ResponseEntity getDataPenjualan(@RequestParam Integer idSales ){
+    @GetMapping("/get/dataPenjualan")
+    public ResponseEntity getDataPenjualan(@RequestParam UUID idSales ){
         ResponseEntity responseEntity = salesService.getDataPenjualan(idSales);
         return responseEntity;
 
     }
-    @GetMapping("/dataPenjualanClass")
+    @GetMapping("/get/dataPenjualanClass")
     public ResponseEntity getDataPenjualanDinamic( String namaSales, String namaBarang){
         ResponseEntity responseEntity = salesService.getPenjualanClassrepo(namaSales, namaBarang);
         return responseEntity;
     }
 
-    @PostMapping("/sales")
+    @PostMapping("/post/sales")
     private ResponseEntity<MessageModel> addSales(@RequestBody TblSales tblSales) {
         ResponseEntity responseEntity = salesPostService.addDataPenjualan(tblSales);
         return responseEntity;

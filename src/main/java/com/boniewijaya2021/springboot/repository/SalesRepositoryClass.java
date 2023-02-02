@@ -1,5 +1,6 @@
 package com.boniewijaya2021.springboot.repository;
 
+import com.boniewijaya2021.springboot.entity.TblSales;
 import com.boniewijaya2021.springboot.pojo.PenjualanPojo;
 import io.swagger.models.auth.In;
 import org.springframework.stereotype.Repository;
@@ -11,6 +12,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.UUID;
 
 @Repository
 public class SalesRepositoryClass {
@@ -18,7 +20,7 @@ public class SalesRepositoryClass {
     @PersistenceContext
     private EntityManager entityManager;
 
-    public List<PenjualanPojo> getDataDinamic( String namaBarang,String namaSales
+    public List<PenjualanPojo> getDataDinamic( String namaSales,String namaBarang
                                               )
     {
         StringBuilder qb = new StringBuilder();
@@ -34,7 +36,7 @@ public class SalesRepositoryClass {
 
         //untuk sisipan yang ditengah
 
-        String QueryText="SELECT id_penjualan, harga, nama_barang, sales_name\n" +
+        String QueryText="SELECT cast (id_penjualan as varchar) id_penjualan, harga, nama_barang, sales_name\n" +
                 "FROM sample.tbl_penjualan  WHERE 1=1 \n" +sisipan;
 
         Query query = entityManager.createNativeQuery(QueryText);
@@ -54,14 +56,14 @@ public class SalesRepositoryClass {
         while(itr.hasNext()){
             PenjualanPojo browse = new PenjualanPojo();
             Object[] obj = (Object[]) itr.next();
-            Integer idPenjualan= Integer.valueOf((Integer) obj[0]);
-            String namaBarangs = String.valueOf(obj[1]);
-            Double harga = Double.valueOf((Double) obj[2]);
+            String idPenjualan= String.valueOf(obj[0]);
+            Double harga = Double.valueOf((Double) obj[1]);
+            String namaBarangs = String.valueOf(obj[2]);
             String salesName= String.valueOf(obj[3]);
 
             browse.setIdPenjualan(idPenjualan);
-            browse.setNamaBarang(namaBarangs);
             browse.setHarga(harga);
+            browse.setNamaBarang(namaBarangs);
             browse.setSalesName(salesName);
             result.add(browse);
         }

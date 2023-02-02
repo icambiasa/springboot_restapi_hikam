@@ -1,9 +1,12 @@
 package com.boniewijaya2021.springboot.entity;
 
 import lombok.*;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.UUID;
 
 @Setter
 @Getter
@@ -14,9 +17,15 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Table(name = "tbl_penjualan", schema = "sample")
 public class TblSales implements Serializable {
+//    @Id
+//    @Column(name = "id_penjualan", nullable = false)
+//    private Integer idPenjualan;
+
     @Id
+    @GenericGenerator(name = "uuid2", strategy = "uuid2")
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "uuid2")
     @Column(name = "id_penjualan", nullable = false)
-    private Integer idPenjualan;
+    private UUID idPenjualan;
 
     @Column(name = "nama_barang", nullable = false)
     private String namaBarang;

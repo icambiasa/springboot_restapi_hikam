@@ -3,8 +3,10 @@ com/boniewijaya2021/springboot/SpringbootApplication.class
 com/boniewijaya2021/springboot/config/Cors$1.class
 com/boniewijaya2021/springboot/config/Cors.class
 com/boniewijaya2021/springboot/controller/SampleGet.class
+com/boniewijaya2021/springboot/service/SalesPostService.class
 com/boniewijaya2021/springboot/repository/SalesRepository.class
 com/boniewijaya2021/springboot/config/SwaggerConfig.class
+com/boniewijaya2021/springboot/pojo/SalesPostPojo.class
 com/boniewijaya2021/springboot/utility/MessageModel.class
 com/boniewijaya2021/springboot/service/SalesService.class
 com/boniewijaya2021/springboot/repository/SalesRepositoryClass.class

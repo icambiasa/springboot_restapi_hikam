@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 @Service
 public class SalesService {
@@ -32,12 +33,12 @@ public class SalesService {
 //        this.salesRepository = salesRepository;
 //    }
 
-    public ResponseEntity getDataPenjualan(Integer idSales){
+    public ResponseEntity getDataPenjualan(UUID idSales){
         Map<String, Object> result = new HashMap<>();
         MessageModel msg = new MessageModel();
         try {
-            PenjualanPojo data = salesRepository.getPenjualanByid(idSales);
-            if(data ==null) {
+            TblSales data = salesRepository.getPenjualanByid(idSales);
+            if(data.getIdPenjualan() ==null) {
                 msg.setStatus(true);
                 msg.setMessage("data tidak ditemukan");
                 msg.setData(null);
