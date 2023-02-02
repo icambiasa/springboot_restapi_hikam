@@ -11,13 +11,9 @@ import java.io.File;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.sql.Timestamp;
-import java.text.DateFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -252,15 +248,15 @@ public class AppUtil {
 
     public static Double nvlDouble(Object input) {
         if (isObjectEmpty(input) || input.equals("null") || input == null) {
-            return new Double(0D);
+            return 0D;
         } else {
             if (input.getClass() == BigDecimal.class) {
                 double value = Double.parseDouble(input.toString().replace(",", "."));
                 return value;
             } else if (input.getClass() == String.class) {
-                return new Double(Double.parseDouble(input.toString()));
+                return Double.parseDouble(input.toString());
             } else {
-                return new Double(Double.parseDouble(input.toString()));
+                return Double.parseDouble(input.toString());
             }
 
         }
@@ -270,13 +266,13 @@ public class AppUtil {
 
     public static Long nvlLong(Object input) {
         if (isObjectEmpty(input) || input.equals("null") || input == null) {
-            return new Long(0L);
+            return 0L;
         } else {
             if (input.getClass() == Double.class) {
-                return new Long(((Double) ((Double) input).doubleValue()).longValue());
+                return ((Double) ((Double) input).doubleValue()).longValue();
             } else if (input.getClass() == String.class) {
                 Long nilai = Long.parseLong(input.toString().replace(",", "."));
-                return new Long(nilai.longValue());
+                return nilai.longValue();
             } else {
                 return new Long(input.toString().replace(",", "."));
             }
