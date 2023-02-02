@@ -1,6 +1,8 @@
 package com.boniewijaya2021.springboot.controller;
 
 import com.boniewijaya2021.springboot.entity.TblSales;
+import com.boniewijaya2021.springboot.entity.TblUsers;
+import com.boniewijaya2021.springboot.pojo.UsersPostPojo;
 import com.boniewijaya2021.springboot.service.SalesPostService;
 import com.boniewijaya2021.springboot.service.SalesService;
 import com.boniewijaya2021.springboot.utility.MessageModel;
@@ -36,6 +38,12 @@ public class SampleGet {
     @PostMapping("/post/sales")
     private ResponseEntity<MessageModel> addSales(@RequestBody TblSales tblSales) {
         ResponseEntity responseEntity = salesPostService.addDataPenjualan(tblSales);
+        return responseEntity;
+    }
+
+    @PostMapping("/post/users")
+    private ResponseEntity<MessageModel> addUsers(@RequestBody UsersPostPojo usersPostPojo) {
+        ResponseEntity responseEntity = salesPostService.addDataUsers(usersPostPojo);
         return responseEntity;
     }
 }
