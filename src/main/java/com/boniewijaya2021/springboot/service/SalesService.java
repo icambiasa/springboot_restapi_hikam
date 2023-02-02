@@ -1,5 +1,6 @@
 package com.boniewijaya2021.springboot.service;
 
+import com.boniewijaya2021.springboot.entity.TblSales;
 import com.boniewijaya2021.springboot.pojo.PenjualanPojo;
 import com.boniewijaya2021.springboot.repository.SalesRepository;
 import com.boniewijaya2021.springboot.repository.SalesRepositoryClass;
@@ -7,6 +8,8 @@ import com.boniewijaya2021.springboot.utility.MessageModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.HashMap;
 import java.util.List;
@@ -20,6 +23,10 @@ public class SalesService {
 
     @Autowired
     private SalesRepositoryClass salesRepositoryClass;
+
+
+
+
 
 //    public SalesService(SalesRepository salesRepository) {
 //        this.salesRepository = salesRepository;
@@ -79,5 +86,6 @@ public class SalesService {
 
 
     }
+
 
 }
