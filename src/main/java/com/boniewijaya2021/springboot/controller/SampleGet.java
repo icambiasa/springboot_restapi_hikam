@@ -22,4 +22,9 @@ public class SampleGet {
         return responseEntity;
 
     }
+    @GetMapping("/dataPenjualanClass")
+    public ResponseEntity getDataPenjualanDinamic( String namaSales, String namaBarang){
+        ResponseEntity responseEntity = salesService.getPenjualanClassrepo(namaSales, namaBarang);
+        return responseEntity;
+    }
 }

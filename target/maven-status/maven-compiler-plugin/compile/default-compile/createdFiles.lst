@@ -7,6 +7,7 @@ com/boniewijaya2021/springboot/repository/SalesRepository.class
 com/boniewijaya2021/springboot/config/SwaggerConfig.class
 com/boniewijaya2021/springboot/utility/MessageModel.class
 com/boniewijaya2021/springboot/service/SalesService.class
+com/boniewijaya2021/springboot/repository/SalesRepositoryClass.class
 com/boniewijaya2021/springboot/entity/TblSales$TblSalesBuilder.class
 com/boniewijaya2021/springboot/pojo/PenjualanPojo.class
 com/boniewijaya2021/springboot/utility/AppUtil.class
