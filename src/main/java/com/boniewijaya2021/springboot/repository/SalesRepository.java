@@ -16,4 +16,6 @@ public interface SalesRepository extends JpaRepository<TblSales, UUID> {
 
 
 
+
+
 }

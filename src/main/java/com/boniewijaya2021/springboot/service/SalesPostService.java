@@ -4,7 +4,7 @@ import com.boniewijaya2021.springboot.entity.TblSales;
 import com.boniewijaya2021.springboot.entity.TblUsers;
 import com.boniewijaya2021.springboot.pojo.UsersPostPojo;
 import com.boniewijaya2021.springboot.repository.SalesRepository;
-import com.boniewijaya2021.springboot.repository.UserRepository;
+import com.boniewijaya2021.springboot.repository.UsersRepository;
 import com.boniewijaya2021.springboot.utility.MessageModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,7 +21,7 @@ public class SalesPostService {
     private SalesRepository salesRepository;
 
     @Autowired
-    private UserRepository userRepository;
+    private UsersRepository userRepository;
 
     public ResponseEntity<MessageModel> addDataPenjualan(TblSales tblSales)
     {
@@ -52,7 +52,7 @@ public class SalesPostService {
 
         try{
             TblUsers tblUsers = new TblUsers();
-            tblUsers.setSalesName(usersPostPojo.getSalesName());
+            tblUsers.setUserName(usersPostPojo.getSalesName());
             tblUsers.setEmail(usersPostPojo.getEmail());
             userRepository.save(tblUsers);
             msg.setStatus(true);

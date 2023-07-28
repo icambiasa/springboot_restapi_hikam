@@ -36,6 +36,4 @@ public class TblSales implements Serializable {
     @Column(name = "sales_name", nullable = false)
     private String salesName;
 
-
-
 }
