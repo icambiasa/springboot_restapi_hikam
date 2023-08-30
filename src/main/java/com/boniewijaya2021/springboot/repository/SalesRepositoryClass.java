@@ -36,7 +36,11 @@ public class SalesRepositoryClass {
 
         //untuk sisipan yang ditengah
 
-        String QueryText="SELECT cast (id_penjualan as varchar) id_penjualan, harga, nama_barang, sales_name\n" +
+        String QueryText="SELECT " +
+                "cast (id_penjualan as varchar) id_penjualan, " +
+                "harga, " +
+                "nama_barang," +
+                " sales_name\n" +
                 "FROM sample.tbl_penjualan  WHERE 1=1 \n" +sisipan;
 
         Query query = entityManager.createNativeQuery(QueryText);

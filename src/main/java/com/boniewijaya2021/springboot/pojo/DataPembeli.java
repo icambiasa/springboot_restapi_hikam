@@ -10,6 +10,7 @@ public class DataPembeli {
     private String jenisKelamin;
     private String namaPembeli;
     private String noTelp;
+
     // "alamat": "depok",
     //  "jenisKelamin": "L",
     //  "namaPembeli": "yua",

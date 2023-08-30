@@ -3,9 +3,12 @@ package com.boniewijaya2021.springboot.controller;
 import com.boniewijaya2021.springboot.entity.Supplier;
 import com.boniewijaya2021.springboot.pojo.BarangPojo;
 import com.boniewijaya2021.springboot.pojo.DataPembeli;
+import com.boniewijaya2021.springboot.pojo.NamaMobilPojo;
 import com.boniewijaya2021.springboot.repository.BarangRepository;
+import com.boniewijaya2021.springboot.repository.NamaMobilRepository;
 import com.boniewijaya2021.springboot.repository.SupplierRepository;
 import com.boniewijaya2021.springboot.service.BarangService;
+import com.boniewijaya2021.springboot.service.NamaMobilService;
 import com.boniewijaya2021.springboot.service.PembeliService;
 import com.boniewijaya2021.springboot.service.SupplierService;
 import com.boniewijaya2021.springboot.utility.MessageModel;
@@ -17,32 +20,21 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/barang")
-public class BarangController {
+@RequestMapping("/namaMobil")
+public class NamaMobilController {
     @Autowired
-    BarangService barangService;
+    NamaMobilService namaMobilService;
 
-    @Autowired
-    SupplierRepository supplierRepository;
-
-    @Autowired
-    BarangRepository barangRepository;
-
-    @PostMapping("/post/barang")
-    private ResponseEntity<MessageModel> addBarang(@RequestBody List<BarangPojo> paramInsertbarang) {
-        ResponseEntity responseEntity = barangService.addBarang(paramInsertbarang);
+    @PostMapping("/post/namaMobil")
+    private ResponseEntity<MessageModel> addNamaMobil(@RequestBody List<NamaMobilPojo> paramInsertNamaMobil) {
+        ResponseEntity responseEntity = namaMobilService.addNamaMobil(paramInsertNamaMobil);
         return responseEntity;
     }
 
-    @GetMapping("/get/dataBarang")
-    public ResponseEntity getDataBarang(){
-        ResponseEntity responseEntity = barangService.getAllBarang();
+    @GetMapping("/get/namaMobil")
+    public ResponseEntity getNamaMobil(){
+        ResponseEntity responseEntity = namaMobilService.getAllNamaMobil();
         return responseEntity;
     }
 
-    @DeleteMapping("/delete/barang")
-    public ResponseEntity<MessageModel> deleteBarang(@RequestParam UUID idBarang) {
-        ResponseEntity responseEntity = barangService.deleteBarang(idBarang);
-        return responseEntity;
-    }
 }

@@ -1,3 +1,4 @@
+com\boniewijaya2021\springboot\pojo\ParamInsertSupplier.class
 com\boniewijaya2021\springboot\entity\Pembeli$PembeliBuilder.class
 com\boniewijaya2021\springboot\entity\TblUsers.class
 com\boniewijaya2021\springboot\repository\SupplierRepository.class
@@ -8,6 +9,7 @@ com\boniewijaya2021\springboot\controller\BarangController.class
 com\boniewijaya2021\springboot\pojo\ParamInsert5.class
 com\boniewijaya2021\springboot\repository\TblMasterRoleRepository.class
 com\boniewijaya2021\springboot\entity\Pembayaran$PembayaranBuilder.class
+com\boniewijaya2021\springboot\pojo\ParamInsertNamaMobil.class
 com\boniewijaya2021\springboot\pojo\UsersPostPojo.class
 com\boniewijaya2021\springboot\repository\UsersRepository.class
 com\boniewijaya2021\springboot\repository\TblRoleMapRepository.class
@@ -20,6 +22,7 @@ com\boniewijaya2021\springboot\controller\SupplierController.class
 com\boniewijaya2021\springboot\entity\Transaksi$TransaksiBuilder.class
 com\boniewijaya2021\springboot\service\MasterRoleService.class
 com\boniewijaya2021\springboot\service\SalesPostService.class
+com\boniewijaya2021\springboot\controller\PelangganController.class
 com\boniewijaya2021\springboot\SpringbootApplication.class
 com\boniewijaya2021\springboot\pojo\BarangPojo.class
 com\boniewijaya2021\springboot\entity\TblSales.class
@@ -28,6 +31,7 @@ com\boniewijaya2021\springboot\controller\PembeliController.class
 com\boniewijaya2021\springboot\pojo\PenjualanPojo.class
 com\boniewijaya2021\springboot\repository\PembeliRepository.class
 com\boniewijaya2021\springboot\utility\AppUtil.class
+com\boniewijaya2021\springboot\repository\NamaMobilRepository.class
 com\boniewijaya2021\springboot\service\SalesService.class
 com\boniewijaya2021\springboot\controller\UsersController.class
 com\boniewijaya2021\springboot\pojo\SupplierPojo.class
@@ -50,10 +54,13 @@ com\boniewijaya2021\springboot\entity\Supplier.class
 com\boniewijaya2021\springboot\utility\MessageModel.class
 com\boniewijaya2021\springboot\pojo\ParamInsertTransaksi.class
 com\boniewijaya2021\springboot\pojo\SalesPostPojo.class
+com\boniewijaya2021\springboot\service\PelangganService.class
 com\boniewijaya2021\springboot\controller\TransaksiController.class
 com\boniewijaya2021\springboot\repository\SalesRepository.class
 com\boniewijaya2021\springboot\entity\Pembeli.class
 com\boniewijaya2021\springboot\entity\Barang.class
 com\boniewijaya2021\springboot\entity\Barang$BarangBuilder.class
+com\boniewijaya2021\springboot\service\NamaMobilService.class
 com\boniewijaya2021\springboot\service\TransaksiService.class
+com\boniewijaya2021\springboot\controller\NamaMobilController.class
 com\boniewijaya2021\springboot\entity\Supplier$SupplierBuilder.class

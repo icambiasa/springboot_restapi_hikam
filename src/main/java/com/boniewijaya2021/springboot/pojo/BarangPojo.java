@@ -12,5 +12,5 @@ public class BarangPojo {
     private String namaBarang;
     private Integer harga;
     private Integer stok;
-    private Supplier Supplier;
+    private Supplier supplier;
 }

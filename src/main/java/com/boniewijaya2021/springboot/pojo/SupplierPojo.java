@@ -8,7 +8,7 @@ import java.util.UUID;
 @Setter
 @Getter
 public class SupplierPojo {
-//    private UUID idSupplier;
+    private UUID idSupplier;
     private String namaSuplier;
     private String noTelp;
     private String alamat;

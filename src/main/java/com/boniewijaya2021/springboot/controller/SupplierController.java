@@ -1,12 +1,15 @@
 package com.boniewijaya2021.springboot.controller;
 
 import com.boniewijaya2021.springboot.entity.Supplier;
+import com.boniewijaya2021.springboot.pojo.BarangPojo;
+import com.boniewijaya2021.springboot.pojo.SupplierPojo;
 import com.boniewijaya2021.springboot.service.SupplierService;
 import com.boniewijaya2021.springboot.utility.MessageModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 
@@ -17,8 +20,8 @@ public class SupplierController {
     SupplierService supplierService;
 
     @PostMapping("/post/supplier")
-    private ResponseEntity<MessageModel> addSupplier(@RequestBody Supplier supplier) {
-        ResponseEntity responseEntity = supplierService.addSupplier(supplier);
+    private ResponseEntity<MessageModel> addSupplier(@RequestBody List<SupplierPojo> paramInsertSupplier) {
+        ResponseEntity responseEntity = supplierService.addSupplier(paramInsertSupplier);
         return responseEntity;
     }
 

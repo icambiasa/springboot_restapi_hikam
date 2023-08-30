@@ -1,10 +1,16 @@
 package com.boniewijaya2021.springboot.service;
 
+
 import com.boniewijaya2021.springboot.entity.Barang;
-import com.boniewijaya2021.springboot.entity.Supplier;
+import com.boniewijaya2021.springboot.entity.NamaMobil;
+import com.boniewijaya2021.springboot.entity.Pelanggan;
+import com.boniewijaya2021.springboot.entity.Transaksi;
 import com.boniewijaya2021.springboot.pojo.BarangPojo;
-import com.boniewijaya2021.springboot.pojo.SupplierPojo;
-import com.boniewijaya2021.springboot.repository.SupplierRepository;
+import com.boniewijaya2021.springboot.pojo.NamaMobilPojo;
+import com.boniewijaya2021.springboot.pojo.PelangganPojo;
+import com.boniewijaya2021.springboot.pojo.TransaksiPojo;
+import com.boniewijaya2021.springboot.repository.NamaMobilRepository;
+import com.boniewijaya2021.springboot.repository.PelangganRepository;
 import com.boniewijaya2021.springboot.utility.MessageModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,32 +18,33 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
-
 @Service
-public class SupplierService {
-    @Autowired
-    SupplierRepository supplierRepository;
 
-    public ResponseEntity<MessageModel> addSupplier(List<SupplierPojo> paramInsertSupplier) {
+public class PelangganService {
+    @Autowired
+    PelangganRepository pelangganRepository;
+
+    public ResponseEntity<MessageModel> addPelanggan(List<PelangganPojo> paramInsertPelanggan) {
         Map<String, Object> result = new HashMap<>();
         MessageModel msg = new MessageModel();
 
         try {
             // List<Pembeli> dataContoh = new ArrayList<>();
             //  dataContoh.add(paramInsert5s);
-            List<SupplierPojo> dataAwal = paramInsertSupplier;
+            List<PelangganPojo> dataAwal = paramInsertPelanggan;
 
             List<String> dataReturn = new ArrayList<>();
 //            String dataReturn  = "tersimpan";
 //            List<Pembeli> simpanAll = new ArrayList<>();
-            for(SupplierPojo map1: dataAwal){
+            for(PelangganPojo map1: dataAwal){
 
-                Supplier object1 = new Supplier();
+                Pelanggan object1 = new Pelanggan();
 //                DataPembeli object1 = new DataPembeli();
-                object1.setNamaSupplier(map1.getNamaSuplier());
-                object1.setNoTelp(map1.getNoTelp());
-                object1.setAlamat(map1.getAlamat());
-                UUID returningId = supplierRepository.save(object1).returningId();
+                object1.setName(map1.getName());
+                object1.setAge(map1.getAge());
+                object1.setCity(map1.getCity());
+                object1.setName(map1.getNamaMobil().getNamaMobil());
+                String returningId = pelangganRepository.save(object1).returningId();
                 dataReturn.add(returningId.toString());
 //                simpanAll.add(object1);
 
@@ -67,11 +74,10 @@ public class SupplierService {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(msg);
         }
     }
-
-    public ResponseEntity getAllsupplier() {
+    public ResponseEntity getAllPelangganMobil() {
         MessageModel msg = new MessageModel();
         try{
-            List<Supplier> tdFaq = supplierRepository.findAll();
+            List<Pelanggan> tdFaq = pelangganRepository.findAll();
 
             if (!tdFaq.isEmpty()) {
                 return ResponseEntity.ok(tdFaq);
@@ -85,18 +91,6 @@ public class SupplierService {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(msg);
         }
     }
-    public ResponseEntity deleteSupplier(UUID idSupplier){
-        MessageModel msg = new MessageModel();
-        try{
-            supplierRepository.deleteById(idSupplier);
-            msg.setStatus(true);
-            msg.setMessage("Data Deleted");
-            return ResponseEntity.ok().body(msg);
-        }catch (Exception e){
-            e.printStackTrace();
-            msg.setStatus(false);
-            msg.setMessage(e.getMessage());
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(msg);
-        }
-    }
 }
+
+

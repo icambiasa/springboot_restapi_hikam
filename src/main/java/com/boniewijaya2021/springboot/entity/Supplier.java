@@ -29,4 +29,9 @@ public class Supplier {
 
     @Column(name = "alamat", length = 100)
     private String alamat;
+
+    public UUID returningId(){
+
+        return idSupplier;
+    }
 }
